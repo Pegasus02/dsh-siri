@@ -1,0 +1,6 @@
+# dsh-siri: talk to DeepSeek Harness with Siri and iPhone Shortcuts.
+# The plugin needs no configuration here; the port, API key and workspace are
+# managed on the Siri page of the settings.
+- insert:
+    - id: dsh-siri
+      name: dsh-siri

@@ -1,0 +1,58 @@
+{
+  "name": "dsh-siri",
+  "version": "0.1.0",
+  "description": "用 Siri 和 iPhone 快捷指令对话 DeepSeek Harness。Talk to DeepSeek Harness with Siri and iPhone Shortcuts.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "siri",
+    "shortcuts",
+    "voice"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "shortcuts/Hey DSH.shortcut",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "author": "Tianjun Cai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pegasus02/dsh-siri.git"
+  },
+  "homepage": "https://github.com/Pegasus02/dsh-siri#readme",
+  "bugs": {
+    "url": "https://github.com/Pegasus02/dsh-siri/issues"
+  }
+}
